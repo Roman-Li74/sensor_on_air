@@ -1,0 +1,15 @@
+[Unit]
+Description=Python script for COM-read
+After=multi-user.target
+After=syslog.target
+After=network.target
+Requires=mysql.service
+ 
+[Service]
+Type=simple
+PIDFile=/run/test_com_1.pid
+ExecStart=/usr/bin/python3 /home/user/my_script/test_com_1.py
+Restart=always
+ 
+[Install]
+WantedBy=multi-user.target
